@@ -7,7 +7,15 @@ export default function App() {
     </div>
   );
 }
-
+/**
+ * Function: Label Counter, count and step useState variables, date for current date.
+ * This includes 2 functions that increase, decrease buttons to display day value.
+ * A Step function is used to increase the frequency the day change should be displayed.
+ * Example: step = 2 + counter value increase days by 2. etc.
+ * Includes conditionals to display proper text to represent the date being displayed.
+ * Example: Today is {date.toString()} or days from today is or days ago was, respectively.
+ * @returns Step, count, date to render and interact with, to display date value dynamicly.
+ */
 function Counter() {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
