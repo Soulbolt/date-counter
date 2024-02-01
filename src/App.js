@@ -18,7 +18,7 @@ export default function App() {
  */
 function Counter() {
   const [count, setCount] = useState(0);
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
 
   const date = new Date("January 31, 2024");
   date.setDate(date.getDate() + count);
@@ -34,23 +34,35 @@ function Counter() {
     <>
       <div>
         <div>
-          <button className="button" onClick={() => setStep((s) => s - 1)}>
+          <input
+            type="range"
+            min="0"
+            max={"10"}
+            onChange={() => setStep((s) => s + 1)}
+            value="0"
+          />
+          {/* <button className="button" onClick={() => setStep((s) => s - 1)}>
             -
-          </button>
-          <span>Step: {step}</span>
+          </button> */}
+          <span>{step}</span>
 
-          <button className="button" onClick={() => setStep((s) => s + 1)}>
+          {/* <button className="button" onClick={() => setStep((s) => s + 1)}>
             +
-          </button>
+          </button> */}
         </div>
       </div>
       <div>
         <div>
+          <input type="number" className="button" onClick={decreaseCount} />
           <button className="button" onClick={decreaseCount}>
             -
           </button>
-          <span>Count: {count}</span>
-
+          <input
+            type="number"
+            className="button"
+            onClick={decreaseCount}
+            value={count}
+          />
           <button className="button" onClick={increaseCount}>
             +
           </button>
