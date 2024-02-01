@@ -16,11 +16,11 @@ function Counter() {
   date.setDate(date.getDate() + count);
 
   function increaseCount() {
-    setCount(count + 1);
+    setCount(count + step);
   }
 
   function decreaseCount() {
-    setCount(count - 1);
+    setCount(count - step);
   }
   return (
     <>
